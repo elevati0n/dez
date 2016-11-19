@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Car -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Car %></h1>
+</div>
 
-<p>
-  <strong>Details:</strong>
-  <%= @car.details %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:details) %></dt>
+      <dd><pre class="prettyprint"><%= @car.details %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @car.user %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              cars_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_car_path(@car), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              car_path(@car),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Location:</strong>
-  <%= @car.location %>
-</p>
-
-<p>
-  <strong>Job:</strong>
-  <%= @car.job %>
-</p>
-
-<%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Back', cars_path %>
