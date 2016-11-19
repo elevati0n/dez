@@ -1,4 +1,5 @@
 ActiveAdmin.register Bid do
+  permit_params :buy_now, :high_bid, :wanted, :minimum, :maximum
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
