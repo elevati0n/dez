@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :cars
+  resources :cars do
+  #->Prelang (voting/acts_as_votable)
+  member do
+    get "vote"
+  end
+end
+
 
   resources :drivers do
   #->Prelang (voting/acts_as_votable)
