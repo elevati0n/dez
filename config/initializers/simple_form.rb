@@ -51,6 +51,22 @@ SimpleForm.setup do |config|
     # b.use :full_error, wrap_with: { tag: :span, class: :error }
   end
 
+  config.wrappers :materialize_form, class: 'input-field my-class', error_class: 'has_error' do |b|
+
+    b.use :html5
+
+    b.use :placeholder
+
+    b.use :input
+
+    b.use :label
+
+    b.use :error, wrap_with: { tag: 'p' , class: 'error-text'}
+
+    # b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
+
+  end
+
   # The default wrapper to be used by the FormBuilder.
   config.default_wrapper = :default
 

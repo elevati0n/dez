@@ -1,18 +1,18 @@
 source 'https://rubygems.org'
 
-
+gem 'sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer',  platforms: :ruby
+gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -53,7 +53,13 @@ gem 'devise', github: 'plataformatec/devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'bootstrap-sass', '3.3.5'
+gem 'bootstrap-sass'
 gem 'bootstrap-sass-extras'
 gem 'tzinfo-data'
 gem 'validates_formatting_of'
+gem 'haml-rails'
+gem "twitter-bootstrap-rails"
+gem 'material_design_lite-sass'
+gem 'railties'
+gem 'activesupport'
+gem 'materialize-sass'

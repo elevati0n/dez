@@ -1,0 +1,26 @@
+= form_for @bid, :html => { :class => 'form-horizontal form-model' } do |f|
+  .form-group
+    = f.label :buy_now, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.number_field :buy_now, :class => 'text-field form-control'
+  .form-group
+    = f.label :high_bid, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.number_field :high_bid, :class => 'text-field form-control'
+  .form-group
+    = f.label :wanted, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.number_field :wanted, :class => 'text-field form-control'
+  .form-group
+    = f.label :minimum, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.number_field :minimum, :class => 'text-field form-control'
+  .form-group
+    = f.label :maximum, :class => 'control-label col-md-2'
+    .col-md-10
+      = f.number_field :maximum, :class => 'text-field form-control'
+  .form-group
+    .col-md-offset-2.col-md-10
+      = f.submit nil, :class => 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), |
+        bids_path, :class => 'btn btn-default'                       |

@@ -1,0 +1,35 @@
+- provide(:title, "Home")
+= yield
+
+.container
+  .center
+    - if user_signed_in?
+      .row.jumbotron
+        %aside.col-lg-2.col-md-4
+          %section.user_info
+            .info
+          %section.stats
+            .stats
+        %section.micropost_form.col-md-8
+          .form
+          %h3 Drivers Needed
+          .feed
+    - else
+      .row-fluid
+        .span12.offset2
+          .hero-unit.text-center
+            .row
+              .span12.centered-text
+                = link_to image_tag("ddgray.png", alt: "dezi logo", width: 700), '#',
+                  class: "img-responsive hidden-xs hidden-sm"
+                = link_to image_tag("ddgray.png", alt: "dezi logo", width: 500), '#',
+                  class: "img-responsive hidden-md hidden-lg hidden-xs"
+                = link_to image_tag("ddgray.png", alt: "dezi logo", width: 300), '#',
+                  class: "img-responsive hidden-md hidden-lg hidden-sm"
+                = link_to "Sign Up to Drive or Request a Ride", new_user_registration_path, class: "btn btn-lg btn-primary"
+                .hidden-lg.hidden-xl
+                  %br
+                = link_to "Sign in to Designated Driver", new_user_session_path, class: "btn btn-lg btn-primary btn"
+
+
+

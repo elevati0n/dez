@@ -1,0 +1,30 @@
+- model_class = Location
+.page-header
+  %h1= t '.title', :default => Location
+.fieldset
+  %dl
+    %dt.label.label-default= model_class.human_attribute_name(:latitude)
+    %dd
+      %pre.prettyprint= @location.latitude
+    %dt.label.label-default= model_class.human_attribute_name(:longitude)
+    %dd
+      %pre.prettyprint= @location.longitude
+    %dt.label.label-default= model_class.human_attribute_name(:start)
+    %dd
+      %pre.prettyprint= @location.start
+    %dt.label.label-default= model_class.human_attribute_name(:end)
+    %dd
+      %pre.prettyprint= @location.end
+    %dt.label.label-default= model_class.human_attribute_name(:zipcode)
+    %dd
+      %pre.prettyprint= @location.zipcode
+.form-group
+  = link_to t('.back', :default => t("helpers.links.back")), |
+    locations_path, :class => 'btn btn-default'              |
+  = link_to t('.edit', :default => t("helpers.links.edit")),   |
+    edit_location_path(@location), :class => 'btn btn-default' |
+  = link_to t('.destroy', :default => t("helpers.links.destroy")),                                               |
+    location_path(@location),                                                                                    |
+    :method => 'delete',                                                                                         |
+    :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, |
+    :class => 'btn btn-danger'                                                                                   |

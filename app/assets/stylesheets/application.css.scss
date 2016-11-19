@@ -15,25 +15,55 @@
 
 *= require_self
 */
+
+
+
+
+
+
+
 @import "bootstrap_configuration";
 
-@import "bootstrap-sprockets";
 
 @import "bootstrap";
 
+@import "materialize";
+
+
+@import "bootstrap-sprockets";
+
+
+
+
+
 //->Prelang (ui_framework:twitter_bootstrap)
 
-// Give everything in 'yield' margin to separate it.
-.yield {
-  margin: 30px;
-}
+//// Give everything in 'yield' margin to separate it.
+//.yield {
+//  margin: 30px;
+//}
+//
+//// Constrain forms for models (scaffolded models) so they aren't full page width.
 
-// Constrain forms for models (scaffolded models) so they aren't full page width.
+//
 .form-model {
-  max-width: 750px;
+//  max-width: 750px;
+  margin: 25vh
+}
+////
+//////->Prelang (user_login:devise)
+.form-user {
+//  max-width: 450px;
+  margin: 25px
+
 }
 
-//->Prelang (user_login:devise)
-.form-user {
-  max-width: 450px;
+.nav {
+  height: $line-height-base;
+  line-height: $line-height-base;
+  ul {
+    li {
+      align-content: center;
+    }
+  }
 }

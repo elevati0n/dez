@@ -1,0 +1,19 @@
+!!! 5
+%html(lang="en")
+  %head
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  - if Rails.env.production?
+    = analytics_init
+  %body
+    %title
+      = content_for?(:title) ? yield(:title) : "Dezo... _|_ Request a Designated Driver"
+    = render 'elements/navbar'
+    = bootstrap_flash
+    .container.card-panel
+      .row
+        .col-md-8= yield
+    %footer
+      %p Dezo 2016
