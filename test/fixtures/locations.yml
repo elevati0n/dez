@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  latitude: 1
+  longitude: 1
+  start: 2016-11-19 15:44:27
+  end: 2016-11-19 15:44:27
+  zipcode: MyString
+  job_id: 
+  user_id: 
+  driver_id: 
+
+two:
+  latitude: 1
+  longitude: 1
+  start: 2016-11-19 15:44:27
+  end: 2016-11-19 15:44:27
+  zipcode: MyString
+  job_id: 
+  user_id: 
+  driver_id: 
