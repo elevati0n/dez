@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :jobs
+
   resources :bids do
   #->Prelang (voting/acts_as_votable)
   member do
