@@ -1,5 +1,6 @@
-<h1>New bid</h1>
+<%- model_class = Bid -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => Bid %></h1>
+</div>
+<%= render :partial => 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', bids_path %>

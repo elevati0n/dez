@@ -1,44 +1,32 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Bid -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => Bid %></h1>
+</div>
 
-<p>
-  <strong>Buy now:</strong>
-  <%= @bid.buy_now %>
-</p>
+<div class="fieldset">
+  <dl>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:buy_now) %></dt>
+      <dd><pre class="prettyprint"><%= @bid.buy_now %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:high_bid) %></dt>
+      <dd><pre class="prettyprint"><%= @bid.high_bid %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:wanted) %></dt>
+      <dd><pre class="prettyprint"><%= @bid.wanted %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:minimum) %></dt>
+      <dd><pre class="prettyprint"><%= @bid.minimum %></pre></dd>
+      <dt class="label label-default"><%= model_class.human_attribute_name(:maximum) %></dt>
+      <dd><pre class="prettyprint"><%= @bid.maximum %></pre></dd>
+  </dl>
+</div>
 
-<p>
-  <strong>High bid:</strong>
-  <%= @bid.high_bid %>
-</p>
+<div class="form-group">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              bids_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_bid_path(@bid), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              bid_path(@bid),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>
 
-<p>
-  <strong>Wanted:</strong>
-  <%= @bid.wanted %>
-</p>
-
-<p>
-  <strong>Minimum:</strong>
-  <%= @bid.minimum %>
-</p>
-
-<p>
-  <strong>Maximum:</strong>
-  <%= @bid.maximum %>
-</p>
-
-<p>
-  <strong>Job:</strong>
-  <%= @bid.job %>
-</p>
-
-<p>
-  <strong>Driver:</strong>
-  <%= @bid.driver %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @bid.user %>
-</p>
-
-<%= link_to 'Edit', edit_bid_path(@bid) %> |
-<%= link_to 'Back', bids_path %>
