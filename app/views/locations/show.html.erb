@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @location.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @location.longitude %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @location.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @location.end %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @location.zipcode %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @location.job %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @location.user %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @location.driver %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
