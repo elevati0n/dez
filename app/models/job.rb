@@ -4,4 +4,5 @@ class Job < ActiveRecord::Base
   has_many :locations
   has_many :users
   has_many :bids
+  acts_as_votable 
 end
