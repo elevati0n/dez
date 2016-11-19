@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161119154405) do
+ActiveRecord::Schema.define(version: 20161119154427) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,6 +46,69 @@ ActiveRecord::Schema.define(version: 20161119154405) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "bids", force: true do |t|
+    t.integer  "buy_now"
+    t.integer  "high_bid"
+    t.integer  "wanted"
+    t.integer  "minimum"
+    t.integer  "maximum"
+    t.integer  "job_id"
+    t.integer  "driver_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bids", ["driver_id"], name: "index_bids_on_driver_id"
+  add_index "bids", ["job_id"], name: "index_bids_on_job_id"
+  add_index "bids", ["user_id"], name: "index_bids_on_user_id"
+
+  create_table "cars", force: true do |t|
+    t.string   "details"
+    t.integer  "user_id"
+    t.integer  "location_id"
+    t.integer  "job_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cars", ["job_id"], name: "index_cars_on_job_id"
+  add_index "cars", ["location_id"], name: "index_cars_on_location_id"
+  add_index "cars", ["user_id"], name: "index_cars_on_user_id"
+
+  create_table "drivers", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jobs", force: true do |t|
+    t.string   "details"
+    t.integer  "user_id"
+    t.integer  "driver_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "jobs", ["driver_id"], name: "index_jobs_on_driver_id"
+  add_index "jobs", ["user_id"], name: "index_jobs_on_user_id"
+
+  create_table "locations", force: true do |t|
+    t.integer  "latitude"
+    t.integer  "longitude"
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "zipcode"
+    t.integer  "job_id"
+    t.integer  "user_id"
+    t.integer  "driver_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "locations", ["driver_id"], name: "index_locations_on_driver_id"
+  add_index "locations", ["job_id"], name: "index_locations_on_job_id"
+  add_index "locations", ["user_id"], name: "index_locations_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -59,8 +122,10 @@ ActiveRecord::Schema.define(version: 20161119154405) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "driver_id"
   end
 
+  add_index "users", ["driver_id"], name: "index_users_on_driver_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
