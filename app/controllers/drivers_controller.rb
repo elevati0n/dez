@@ -1,5 +1,5 @@
 class DriversController < ApplicationController
-  before_action :set_driver, only: [:show, :edit, :update, :destroy]
+  before_action :set_driver, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /drivers
   # GET /drivers.json
