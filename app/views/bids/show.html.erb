@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Buy now:</strong>
+  <%= @bid.buy_now %>
+</p>
+
+<p>
+  <strong>High bid:</strong>
+  <%= @bid.high_bid %>
+</p>
+
+<p>
+  <strong>Wanted:</strong>
+  <%= @bid.wanted %>
+</p>
+
+<p>
+  <strong>Minimum:</strong>
+  <%= @bid.minimum %>
+</p>
+
+<p>
+  <strong>Maximum:</strong>
+  <%= @bid.maximum %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @bid.job %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @bid.driver %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @bid.user %>
+</p>
+
+<%= link_to 'Edit', edit_bid_path(@bid) %> |
+<%= link_to 'Back', bids_path %>
