@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :bids
+  resources :bids do
+  #->Prelang (voting/acts_as_votable)
+  member do
+    get "vote"
+  end
+end
+
 
   resources :cars do
   #->Prelang (voting/acts_as_votable)
