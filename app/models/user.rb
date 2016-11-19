@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
   has_one :location
   has_many :jobs
   belongs_to :driver
+  acts_as_votable 
 end
