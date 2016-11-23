@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'sass'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -40,26 +40,31 @@ gem 'spring',        group: :development
 
 gem 'bundler'
 
-group :development do
-  gem 'better_errors'
-end
-
-gem 'binding_of_caller'
-gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
-gem 'google-analytics-rails'
-gem 'rails_config'
-gem 'simple_form'
+gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise', github: 'plataformatec/devise'
+gem 'acts_as_votable', github: 'ryanto/acts_as_votable'
+gem 'binding_of_caller'
+gem 'rails_config'
+gem 'google-analytics-rails'
+gem 'simple_form'
 gem 'omniauth'
 gem 'omniauth-facebook'
-gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '3.3.5'
 gem 'bootstrap-sass-extras'
-gem 'tzinfo-data'
 gem 'validates_formatting_of'
+gem 'tzinfo-data'
+
+group :development do
+  gem 'better_errors'
+  gem 'pry-rails'
+end
+
+gem 'sass'
 gem 'haml-rails'
-gem "twitter-bootstrap-rails"
+gem 'twitter-bootstrap-rails'
 gem 'material_design_lite-sass'
 gem 'railties'
 gem 'activesupport'
 gem 'materialize-sass'
+
+gem 'bh', '~> 1.2'
